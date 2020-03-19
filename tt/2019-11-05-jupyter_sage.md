@@ -1,4 +1,5 @@
 ---
+layout: post
 title: "Resister SageMath to Jupyter Notebook"
 excerpt: "Jupyter Notebook에 SageMath 커널을 추가하자."
 date: 2019-11-05
