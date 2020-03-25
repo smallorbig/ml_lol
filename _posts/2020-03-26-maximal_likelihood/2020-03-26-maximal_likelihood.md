@@ -81,10 +81,9 @@ $$p^* = \mathrm{argmax}_p C \times p^4(1-p)^6 = \mathrm{argmax}_p \{\mathrm{log}
 
 $f(p) = 4\mathrm{log}(p) + 6\mathrm{log}(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이이므로 아래와 같은 그래프가 얻어진다.
 
-
 |![](https://drive.google.com/uc?id=1-uFlTNaTB9DyqCKQJtbP8kFxumFdatCt){:width="50%"}|
 |:-:|
-|0에서 1까지 범위에서 $\mathrm{log}$함수|
+|0에서 1까지 범위에서 $f(p)$|
 
 최대값을 찾기 위해 미분값이 $0$인 $p$를 구하면,
 
