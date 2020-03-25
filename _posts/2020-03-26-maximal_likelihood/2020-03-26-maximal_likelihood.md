@@ -67,21 +67,24 @@ $${10 \choose 4} p^4 (1-p)^6 = 210 \times p^4 (1-p)^6 = C \times p^4 (1-p)^6$$
 이 사건은 "흔한 사건"이라고 생각할 수 있고 따라서 발생 확률이 높은 사건으로 생각할 수 있다.
 따라서 항아리 안의 구성을 의미하는 확률을 $p^*$라고 하면 우리가 우리가 목격할 확률을 최대로 높이는 $p$를 찾는 것으로 얻어진다.
 
-$$p^* = argmax_p C \times p^4(1-p)^6$$
+$$p^* = \mathrm{argmax}_p C \times p^4(1-p)^6$$
 
 여기서 우리는 $p$에 관한 10차 다항식의 최대값을 생각하게 된다.
-여기서 최대값을 찾기위한 테크닉을 사용하는데 그 방법이 바로 $log$이다.
+여기서 최대값을 찾기위한 테크닉을 사용하는데 그 방법이 바로 $\mathrm{log}$이다.
 
-## $log$ 최대
+## $\mathrm{log}$ 최대
 
-$log$는 단조 증가함수이므로 $C \times p^4(1-p)^6$를 최대로 만드는 $p$와, 
-$log(C \times p^4(1-p)^6)$를 최대로 만드는 $p$는 같다. 따라서 아래와 같이 유도된다.
+$\mathrm{log}$는 단조 증가함수이므로 $C \times p^4(1-p)^6$를 최대로 만드는 $p$와, 
+$\mathrm{log}(C \times p^4(1-p)^6)$를 최대로 만드는 $p$는 같다. 따라서 아래와 같이 유도된다.
 
-$$p^* = argmax_p C \times p^4(1-p)^6 = argmax_p \{log(C) + 4log(p) + 6log(1-p)\}$$
+$$p^* = \mathrm{argmax}_p C \times p^4(1-p)^6 = \mathrm{argmax}_p \{\mathrm{log}(C) + 4\mathrm{log}(p) + 6\mathrm{log}(1-p)\}$$
 
-$f(p) = 4log(p) + 6log(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이이므로 아래와 같은 그래프가 얻어진다.
+$f(p) = 4\mathrm{log}(p) + 6\mathrm{log}(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이이므로 아래와 같은 그래프가 얻어진다.
 
-![log](./img/log.png)
+
+|![](https://drive.google.com/uc?id=1-uFlTNaTB9DyqCKQJtbP8kFxumFdatCt){:width="50%"}|
+|:-:|
+|0에서 1까지 범위에서 $\mathrm{log}$함수|
 
 최대값을 찾기 위해 미분값이 $0$인 $p$를 구하면,
 
