@@ -1,4 +1,4 @@
-I"<h1 id="introduction">Introduction</h1>
+I"R<h1 id="introduction">Introduction</h1>
 
 <p>현재 공부 중인 <code class="highlighter-rouge">fasttext</code> 모델의 기본 테크닉이 사실 최대 우도 추정법이다.
 최대 우도 추정법의 예제를 통해서 추정법을 이해하고, <code class="highlighter-rouge">fasttext</code>의 이해에 대한 깊이를 더하자.</p>
@@ -16,7 +16,7 @@
 항아리에 있는 검은 구슬은 몇 개일까?</p>
 </blockquote>
 
-<p>직관적으로 우리는 아마 검은 구슬이 4개가 아닐까 하고 추측할 것이다.
+<p>직관적으로 우리는 아마 검은 구슬이 40개가 아닐까 하고 추측할 것이다.
 엄밀하게 정답을 설명할 수 있을까?</p>
 
 <h1 id="풀이법">풀이법</h1>
@@ -78,14 +78,21 @@ $log(C \times p^4(1-p)^6)$를 최대로 만드는 $p$는 같다. 따라서 아�
 
 <p>$f(p) = 4log(p) + 6log(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이이므로 아래와 같은 그래프가 얻어진다.</p>
 
-<p><img src="img/log.png" alt="log" /></p>
+<p><img src="./img/log.png" alt="log" /></p>
 
-<p>최대값을 찾기 위해 미분값이 0인 $p$를 구하면,</p>
+<p>최대값을 찾기 위해 미분값이 $0$인 $p$를 구하면,</p>
 
-<script type="math/tex; mode=display">f'(p) = \frac{4}{p} - \frac{6}{1-p} = 0 -> p = \frac{4}{10}</script>
+<p><script type="math/tex">f'(p) = \frac{4}{p} - \frac{6}{1-p} = 0 -> p = \frac{4}{10}</script> 이며,</p>
 
 <p>우리가 원하는 $p^* = \frac{4}{10}$, 따라서 검은 공의 갯수는 $100*\frac{4}{10} = 40$개로 예상된다.</p>
 
-<h1 id="comments">Comments</h1>
+<h1 id="in-general">In general</h1>
 
+<p>일반적으로 최대 우도 추정법을 사용하기 위해서 다음과 같은 정보를 확인한다.</p>
+
+<ol>
+  <li>관측값이 따르는 분포</li>
+  <li>관측값이 $x$일 때의 가능도, 즉 확률밀도함수의 $x$에 대한 함숫값</li>
+  <li>가능도를 최대로 만드는 $x$의 확률</li>
+</ol>
 :ET
