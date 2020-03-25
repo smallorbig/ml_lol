@@ -79,7 +79,7 @@ $\mathrm{log}(C \times p^4(1-p)^6)$를 최대로 만드는 $p$는 같다. 따라
 
 $$p^* = \mathrm{argmax}_p C \times p^4(1-p)^6 = \mathrm{argmax}_p \{\mathrm{log}(C) + 4\mathrm{log}(p) + 6\mathrm{log}(1-p)\}$$
 
-$f(p) = 4\mathrm{log}(p) + 6\mathrm{log}(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이이므로 아래와 같은 그래프가 얻어진다.
+$f(p) = 4\mathrm{log}(p) + 6\mathrm{log}(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이어서 아래와 같은 그래프가 얻어진다.
 
 |![](https://drive.google.com/uc?id=1-uFlTNaTB9DyqCKQJtbP8kFxumFdatCt){:width="50%"}|
 |:-:|
@@ -88,7 +88,7 @@ $f(p) = 4\mathrm{log}(p) + 6\mathrm{log}(1-p)$라고 두면 $f(p)$를 최대로 
 
 최대값을 찾기 위해 미분값이 $0$인 $p$를 구하면,
 
-$$ f'(p) = \frac{4}{p} - \frac{6}{1-p} = 0 -> p = \frac{4}{10} $$ 이며,
+$$f'(p) = \frac{4}{p} - \frac{6}{1-p} = 0 \rightarrow p = \frac{4}{10}$$ 이며,
 
 우리가 원하는 $p^* = \frac{4}{10}$, 따라서 검은 공의 갯수는 $100*\frac{4}{10} = 40$개로 예상된다. 
 
