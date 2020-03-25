@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Tale
 
 [![Gem Version](https://badge.fury.io/rb/tale.svg)](https://badge.fury.io/rb/tale)
@@ -127,3 +128,7 @@ Found a bug or have a suggestion? Feel free to create an issue or make a pull re
 
 ## License
 See [LICENSE](https://github.com/chesterhow/tale/blob/master/LICENSE)
+=======
+# ml_lol
+머신러닝 공부 자료 모으기
+>>>>>>> a1b5a6d2e753aeb2b43d590a43664cae11f4e362

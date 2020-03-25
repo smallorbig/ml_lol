@@ -19,6 +19,7 @@ author:
   email:        osmfirst@gmail.com
 
 # Build settings
+<<<<<<< HEAD
 markdown:       kramdown
 include:
   - _pages
@@ -29,6 +30,10 @@ sass:
   style:        compressed
 
 # Gems
+=======
+markdown: kramdown
+theme: jekyll-theme-cayman
+>>>>>>> a1b5a6d2e753aeb2b43d590a43664cae11f4e362
 plugins:
   - jekyll-feed
   - jekyll-paginate
