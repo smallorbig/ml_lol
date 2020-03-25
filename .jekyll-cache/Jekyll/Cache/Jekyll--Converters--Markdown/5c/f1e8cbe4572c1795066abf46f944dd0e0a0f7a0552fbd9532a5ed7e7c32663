@@ -1,0 +1,114 @@
+I"�<h1 id="introduction">Introduction</h1>
+
+<p>현재 공부 중인 <code class="highlighter-rouge">fasttext</code> 모델의 기본 테크닉이 사실 최대 우도 추정법이다.
+최대 우도 추정법의 예제를 통해서 추정법을 이해하고, <code class="highlighter-rouge">fasttext</code>의 이해에 대한 깊이를 더하자.</p>
+
+<h1 id="예제">예제</h1>
+
+<p>참고 : <img src="https://youtu.be/sOtkPm_1GYw" alt="이야기로 설명하는 최대 우도 추정법 Maximum Likelihood Estimation" /></p>
+
+<blockquote>
+  <p>항아리 안에 검은 구슬, 흰 구슬이 섞여있다.
+합쳐서 총 100개의 구슬이 있다.</p>
+
+  <p>임의로 한개를 뽑아서 확인하고 넣는 시행을 10번 반복하였다.
+결과로 검은 구슬이 4번, 흰 구슬이 6번 추출되었다. 
+항아리에 있는 검은 구슬은 몇 개일까?</p>
+</blockquote>
+
+<p>직관적으로 우리는 아마 검은 구슬이 40개가 아닐까 하고 추측할 것이다.
+엄밀하게 정답을 설명할 수 있을까?</p>
+
+<h1 id="풀이법">풀이법</h1>
+
+<p>최대 우도 추정법으로 풀어보자.</p>
+
+<p>검은 구슬이 뽑힐 확률 $p$를 구하면 항아리 속의 검은 구슬 갯수는 $100 \times p$개로 얻어진다. 우리의 목적은 $p$를 구하는 것이다. 흰 구슬이 뽑힐 확률은 $p$를 사용해서 얻는다.</p>
+
+<script type="math/tex; mode=display">p = \frac{\text{검은 구슬 수}}{\text{전체 구슬 수}}</script>
+
+<script type="math/tex; mode=display">1-p = \frac{\text{흰 구슬 수}}{\text{전체 구슬 수}}</script>
+
+<p>문제의 경우 구슬을 확인하고 다시 항아리에 넣는 시행을 반복하므로 독립시행이다.
+따라서 10번 추출하여 4번이 검을 구슬이 되는 확률을 아래와 같이 구한다</p>
+
+<script type="math/tex; mode=display">{10 \choose 4} p^4 (1-p)^6 = 210 \times p^4 (1-p)^6 = C \times p^4 (1-p)^6</script>
+
+<p>210는 상수 이므로 이 상수를 간단히 $C$로 표기하자.</p>
+
+<p>위 확률에 대해서 고찰해보자.</p>
+
+<blockquote>
+  <p>위 확률을 보아 $p$가 얼마가 되어야 할까?</p>
+</blockquote>
+
+<p>최대 우도 추정법은 210번의 관찰된 사항에 대해서 이 관찰은 우연히 일어난 일이 아니라고 고려한다. 다시 말하면 무수히 많은 경우에 대해서 “210번이나” 관찰된 일이 낮은 확률을 갖게 될 것이라고 생각할 수 없다는 이야기다. 다음 비유를 생각해보자.</p>
+
+<h2 id="최대-우도-추정법의-비유적-설명">최대 우도 추정법의 비유적 설명</h2>
+
+<p>같은 대학교 같은 과의 “남녀 학생”이 교내 식당, 학교 앞 카페, 영화관에서 함께 있는 것을 보았다고 생각해보자. 그렇다면 우리는 “3번이나 함께 있는 모습을 보았으니 자주 만나는 사이인가보구나!”라고 생각할 것이다.</p>
+
+<p>어째서 3번 본것 만으로 자주 만났을 것이라고 생각할 수 있을까?
+그 남녀가 함께 있는 사건이 흔한 일이었기 때문에 우리가 목격할 수 있었다고 생각하기 때문이다.
+둘이 함께있는 모습을 목격할 확률이 낮기 때문에 3번이나 목격했다는 것은 목격한 일이 자주 발생했기 때문이다!</p>
+
+<p>즉, 다음과 같은 식을 얻는다.</p>
+
+<blockquote>
+  <p>흔한 사건 = 빈도가 높은 사건 = 발생 확률이 높은 사건</p>
+</blockquote>
+
+<h2 id="다시-문제로">다시 문제로</h2>
+
+<p>우리는 10번의 추출 중 검은 구슬 4개가 관찰되는 사건을 목격했다. 
+이 사건은 “흔한 사건”이라고 생각할 수 있고 따라서 발생 확률이 높은 사건으로 생각할 수 있다.
+따라서 항아리 안의 구성을 의미하는 확률을 $p^*$라고 하면 우리가 우리가 목격할 확률을 최대로 높이는 $p$를 찾는 것으로 얻어진다.</p>
+
+<script type="math/tex; mode=display">p^* = \mathrm{argmax}_p C \times p^4(1-p)^6</script>
+
+<p>여기서 우리는 $p$에 관한 10차 다항식의 최대값을 생각하게 된다.
+여기서 최대값을 찾기위한 테크닉을 사용하는데 그 방법이 바로 $\mathrm{log}$이다.</p>
+
+<h2 id="mathrmlog-최대">$\mathrm{log}$ 최대</h2>
+
+<p>$\mathrm{log}$는 단조 증가함수이므로 $C \times p^4(1-p)^6$를 최대로 만드는 $p$와, 
+$\mathrm{log}(C \times p^4(1-p)^6)$를 최대로 만드는 $p$는 같다. 따라서 아래와 같이 유도된다.</p>
+
+<script type="math/tex; mode=display">p^* = \mathrm{argmax}_p C \times p^4(1-p)^6 = \mathrm{argmax}_p \{\mathrm{log}(C) + 4\mathrm{log}(p) + 6\mathrm{log}(1-p)\}</script>
+
+<p>$f(p) = 4\mathrm{log}(p) + 6\mathrm{log}(1-p)$라고 두면 $f(p)$를 최대로 만드는 $p$가 우리가 찾고자하는 $p^*$이다. $p$는 확률이므로 0과 1사이이므로 아래와 같은 그래프가 얻어진다.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><img src="https://drive.google.com/uc?id=1-uFlTNaTB9DyqCKQJtbP8kFxumFdatCt" alt="" width="50%" /></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center">0에서 1까지 범위에서 $f(p)$</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>최대값을 찾기 위해 미분값이 $0$인 $p$를 구하면,</p>
+
+<p><script type="math/tex">f'(p) = \frac{4}{p} - \frac{6}{1-p} = 0 -> p = \frac{4}{10}</script> 이며,</p>
+
+<p>우리가 원하는 $p^* = \frac{4}{10}$, 따라서 검은 공의 갯수는 $100*\frac{4}{10} = 40$개로 예상된다.</p>
+
+<h1 id="comments">Comments</h1>
+
+<p>일반적으로 최대 우도 추정법을 사용하기 위해서 다음과 같은 흐름을 따른다.</p>
+
+<ol>
+  <li>관측값이 따르는 분포</li>
+  <li>관측값이 $x$일 때의 가능도, 즉 확률밀도함수의 $x$에 대한 함숫값</li>
+  <li>가능도를 최대로 만드는 $x$의 확률</li>
+</ol>
+
+<p>하지만 기계학습에 있어서 우리는 자료의 분포를 가정할 수 없다. 
+이를 극복하기 위한 방법으로 자료를 엄청나게 많이 모은 Big Data를 사용해서 분포를 가정한다.
+엄밀하진 않지만 효과적임이 밝혀져 Big Data를 가정한 많은 방법에 최대 우도 추정법은 효과적이다.
+따라서 Big Data가 이미 준비된 자연어 처리 분야의 경우 합리적인 모델의 선택이라고 할 수 있을 것이다.</p>
+:ET

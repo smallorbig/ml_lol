@@ -14,7 +14,7 @@ author: Oh
 
 # 예제
 
-참고 : [![이야기로 설명하는 최대 우도 추정법 Maximum Likelihood Estimation](https://drive.google.com/uc?id=1QBLxxVRLJI72pE_qWLuLZ_8Zlv8P4xYi)][https://youtu.be/sOtkPm_1GYw]
+참고 : [이야기로 설명하는 최대 우도 추정법 (Maximum Likelihood Estimation)](https://youtu.be/sOtkPm_1GYw)
 
 > 항아리 안에 검은 구슬, 흰 구슬이 섞여있다.
 > 합쳐서 총 100개의 구슬이 있다.
