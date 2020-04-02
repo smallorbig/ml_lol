@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "최대 우도 추정법 (Maximal Likelihood Estimation)"
-date: 2019-11-05
+date: 2020-03-26
 use_math: true
 author: Oh
 ---
