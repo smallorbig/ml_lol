@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Web Scaping - 가수 앨범 리스트 가져오기"
+title: "Web Scraping - 가수 앨범 리스트 가져오기"
 date: 2020-04-14
 use_math: true
 author: Oh
