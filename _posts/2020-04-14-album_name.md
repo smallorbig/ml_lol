@@ -94,7 +94,7 @@ soup = bsoup(cont, 'html.parser')
 
 이 정보는 다음 포털 사이트에서 아이유를 검색해서 얻은 결과를 html로 표현한 것이다.
 
-| ![image](https://drive.google.com/uc?export=view&id=1TqTqspoMV_aThcFxEU2mhRKsX3MiUyaY){:width="50%"} |
+| ![image](https://drive.google.com/uc?export=view&id=1TqTqspoMV_aThcFxEU2mhRKsX3MiUyaY){:width="70%"} |
 | :----------------------------------------------------------: |
 | 아이유의 앨범 리스트를 볼 수 있는 페이지로 가려면 가수이름을 클릭한다. |
 
