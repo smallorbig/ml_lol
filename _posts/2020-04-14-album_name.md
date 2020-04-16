@@ -94,7 +94,7 @@ soup = bsoup(cont, 'html.parser')
 
 이 정보는 다음 포털 사이트에서 아이유를 검색해서 얻은 결과를 html로 표현한 것이다.
 
-| ![image](https://drive.google.com/uc?export=view&id=1bPV1sfqG1TzCL7qVevqr-iMz9NEqFp2x){:width="70%"} |
+| ![image](https://drive.google.com/uc?export=view&id=1bPV1sfqG1TzCL7qVevqr-iMz9NEqFp2x){:width="100%"} |
 | :----------------------------------------------------------: |
 | 아이유의 앨범 리스트를 볼 수 있는 페이지로 가려면 가수이름을 클릭한다. |
 
@@ -106,7 +106,7 @@ url2 = soup.select_one("#profColl > div.coll_cont > div.rwd_info.type_longtit3 >
 
 Chrome을 기준으로 아래와 같이 선택하면  `#profColl > div.coll_cont > div.rwd_info.type_longtit3 > div > div.info_tit > a ` 가 선택된다. 
 
-| ![image](https://drive.google.com/uc?export=view&id=167s-XtCMmYr-0p6g-e2o0CDOp5sDdYrc){:width="70%"} |
+| ![image](https://drive.google.com/uc?export=view&id=167s-XtCMmYr-0p6g-e2o0CDOp5sDdYrc){:width="100%"} |
 | :----------------------------------------------------------: |
 |                     링크 url을 얻는 방법                     |
 
@@ -116,7 +116,7 @@ Chrome을 기준으로 아래와 같이 선택하면  `#profColl > div.coll_cont
 
 우선 `webdriver`로 Chrome을 부르기 위해서 `chromedriver`를 다운로드 한다. 내 컴퓨터는 `Version 80.0.3987.132` 의 Chrome이 설치되어 있어 이에 맞는 `chromedriver`를 다운로드한다.
 
-| ![image](https://drive.google.com/uc?export=view&id=1ZtDeXGhqU51MWJg73woB_nmYgmaCf22_){:width="70%"} |
+| ![image](https://drive.google.com/uc?export=view&id=1ZtDeXGhqU51MWJg73woB_nmYgmaCf22_){:width="100%"} |
 | :----------------------------------------------------------: |
 |                    chromedriver 다운로드                     |
 
