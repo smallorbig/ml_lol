@@ -116,7 +116,9 @@ Chrome을 기준으로 아래와 같이 선택하면  `#profColl > div.coll_cont
 
 우선 `webdriver`로 Chrome을 부르기 위해서 `chromedriver`를 다운로드 한다. 내 컴퓨터는 `Version 80.0.3987.132` 의 Chrome이 설치되어 있어 이에 맞는 `chromedriver`를 다운로드한다.
 
-![image](https://drive.google.com/uc?export=view&id=1NyVVigsjapYPkvLxySTsdNddaCN3Aiq6){:width="70%"}
+| ![image](https://drive.google.com/uc?export=view&id=1NyVVigsjapYPkvLxySTsdNddaCN3Aiq6){:width="70%"} |
+| :----------------------------------------------------------: |
+|                    chromedriver 다운로드                     |
 
 **작성 중인 파일과 같은 위치에 두고** 아래 명령어로 호출한다.
 
