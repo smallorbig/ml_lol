@@ -6,7 +6,6 @@ use_math: true
 author: Oh
 ---
 
-
 # Introduction
 
 현재 공부 중인 `fasttext` 모델의 기본 테크닉이 사실 최대 우도 추정법이다.
